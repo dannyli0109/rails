@@ -9,11 +9,24 @@ class Api::GoalsController < ApplicationController
 
       json = {}
 
+
+      # questions = {
+      #   "building.isHealthCareFacility": "Is the building a health care facility?"
+      #   "building"
+      # }
+      #
+
+
       request.on_complete do |response|
 
 
         if response.success?
           json = JSON.parse(response.body)
+
+
+
+
+
           # hell yeah
         elsif response.timed_out?
           # aw hell no
@@ -27,10 +40,7 @@ class Api::GoalsController < ApplicationController
         end
       end
 
-
-
       request.run
-
 
       render json: json
     end
