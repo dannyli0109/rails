@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   get "/api/questions/finance", to: 'api/questions#finance_show'
 
+  get "/api/questions/escalator", to: 'api/questions#escalator_show'
+
 end

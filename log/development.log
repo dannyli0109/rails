@@ -4309,3 +4309,40 @@ puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
 puma (3.9.1) lib/puma/server.rb:435:in `process_client'
 puma (3.9.1) lib/puma/server.rb:299:in `block in run'
 puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/questions/finance" for 127.0.0.1 at 2017-07-29 15:17:34 +1000
+Processing by Api::QuestionsController#finance_show as HTML
+ETHON: performed EASY effective_url=https://raap.d61.io/api/v0/domain/demonstration/schema response_code=200 return_code=ok total_time=1.3480590000000001
+Completed 200 OK in 1354ms (Views: 2.9ms)
+
+
+Started GET "/api/questions/finance" for 127.0.0.1 at 2017-07-29 15:24:43 +1000
+Processing by Api::QuestionsController#finance_show as HTML
+ETHON: performed EASY effective_url=https://raap.d61.io/api/v0/domain/anti-money-laundering-and-counter-terrorism-financing/schema response_code=200 return_code=ok total_time=1.515525
+Completed 200 OK in 1562ms (Views: 39.1ms)
+
+
+Started GET "/api/questions/finance" for 127.0.0.1 at 2017-07-29 15:26:13 +1000
+Processing by Api::QuestionsController#finance_show as HTML
+ETHON: performed EASY effective_url=https://raap.d61.io/api/v0/domain/anti-money-laundering-and-counter-terrorism-financing/reasoning/input-atoms response_code=200 return_code=ok total_time=2.278688
+Completed 200 OK in 2347ms (Views: 60.7ms)
+
+
+Started GET "/api/questions/finance" for 127.0.0.1 at 2017-07-29 16:08:41 +1000
+Processing by Api::QuestionsController#finance_show as HTML
+ETHON: performed EASY effective_url=https://raap.d61.io/api/v0/domain/export-control/reasoning/goals response_code=200 return_code=ok total_time=1.315507
+Completed 200 OK in 1329ms (Views: 9.3ms)
+
+
+Started GET "/api/questions/escalator" for 127.0.0.1 at 2017-07-29 16:42:13 +1000
+Processing by Api::QuestionsController#escalator_show as HTML
+ETHON: performed EASY effective_url=https://raap.d61.io/api/v0/domain/demonstration/schema response_code=200 return_code=ok total_time=0.943302
+Completed 200 OK in 945ms (Views: 0.9ms)
+
+
+Started GET "/api/questions/escalator" for 127.0.0.1 at 2017-07-29 16:45:36 +1000
+Processing by Api::QuestionsController#escalator_show as HTML
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://raap.d61.io/api/v0/domain/demonstration/schema response_code=200 return_code=ok total_time=1.04376
+Completed 200 OK in 1405ms (Views: 2.2ms)
+
+
