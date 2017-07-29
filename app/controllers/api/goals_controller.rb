@@ -16,7 +16,7 @@ class Api::GoalsController < ApplicationController
       # }
       #
 
-
+      
       request.on_complete do |response|
 
 

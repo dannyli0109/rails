@@ -84,7 +84,6 @@ class Api::QuestionsController < ApplicationController
 
               return_json.push(return_question)
 
-
               puts question
 
 

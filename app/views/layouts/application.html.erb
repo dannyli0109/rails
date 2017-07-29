@@ -11,30 +11,53 @@
 </head>
 
 <body>
-  <nav class="blue darken-4">
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo">Illuminati</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="/about">About us</a></li>
-        <li><a href="#">Source Code</a></li>
-        <li><a href="#">Thing</a></li>
-        <li><a href="#">Else</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="/about">About us</a></li>
-        <li><a href="#">Source Code</a></li>
-        <li><a href="#">Thing</a></li>
-        <li><a href="#">Else</a></li>
-      </ul>
-    </div>
-  </nav>
+
+  <main>
+    <nav class="teal darken-4">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Illuminati</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="/about">About us</a></li>
+          <li><a href="#">Source Code</a></li>
+
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="/about">About us</a></li>
+          <li><a href="#">Source Code</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <%= yield %>
+
+  </main>
+
+
+
+
+
+
+
+
+
 
 
   <script>
-    $(".button-collapse").sideNav();
+  $(".button-collapse").sideNav();
   </script>
 
-  <%= yield %>
+
+
+
+
+  <footer class="page-footer teal darken-4">
+    <div class="footer-copyright">
+      <div class="container">
+        <p>&copy; Copyright 2017 Illuminati</p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

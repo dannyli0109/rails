@@ -4,9 +4,12 @@ Rails.application.routes.draw do
 
   get "/about", to: "pages#about"
 
+  get "/form", to: "pages#form"
+
   get "/api/questions/finance", to: 'api/questions#finance_show'
 
   get "/api/questions/escalator", to: 'api/questions#escalator_show'
 
   get "/api/goals/escalator", to: "api/goals#escalator_show"
+
 end

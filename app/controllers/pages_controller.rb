@@ -7,4 +7,9 @@ class PagesController < ApplicationController
 
   end
 
+  def form
+    
+
+  end
+
 end
