@@ -1,0 +1,113 @@
+<div class="row" style="margin: 20px">
+  <div class="col l5 hide-on-med-and-down" style="text-align:center; position: fixed">
+    <iframe width="400" height="400" frameBorder="0" src="https://chiumanhay.shinyapps.io/compliance_donut/"></iframe>
+  </div>
+  <div class="container">
+
+    <div class="col l7 s12 offset-l5">
+      <%= form_tag("/result", method: "get", class: "questions-container") do %>
+
+
+
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<script>
+$questionContainer = $(".questions-container")
+$.ajax({ url: "/api/questions/escalator"}).done(function(res) {
+  res.forEach(function(element,index) {
+    if(element["atomType"] == "BOOL") {
+      var source = $('#question-template-bool').html()
+      var template = Handlebars.compile(source)
+      $questionContainer.append(template(element))
+      var $output = $('<input type="hidden" name=' + "results[" + element.name + "]" + " id=" + element.name + '></input>')
+      $questionContainer.append($output)
+      var $select = $("select[id='" + element.name + "']")
+      $select.on("change", function(e) {
+        $output.val(e.target.value)
+      })
+    } else if (element["atomType"] == "DATE") {
+      var source = $('#question-template-date').html()
+      var template = Handlebars.compile(source)
+      $questionContainer.append(template(element))
+      var $output = $("input[id='" + element.name + "']")
+      $output.attr("name", "results[" + element.name + "]")
+    } else {
+      var source = $('#question-template-numeric').html()
+      var template = Handlebars.compile(source)
+      $questionContainer.append(template(element))
+      var $output = $("input[id='" + element.name + "']")
+      $output.attr("name", "results[" + element.name + "]")
+    }
+  })
+
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+
+  $questionContainer.append($("<button class='btn waves-effect waves-light' type='submit' name='action' sytle='width:100%'>Submit</button>"))
+
+  
+
+
+
+
+
+
+
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: false // Close upon selecting a date,
+  });
+})
+</script>
+
+<script id="question-template-bool" type="template">
+<div class="card-panel hoverable">
+<div class="container">
+<p>{{ description }}</p>
+<div class="input-field">
+<select id={{ name }}>
+<option value=null disabled selected>Choose your option</option>
+<option value="true">Yes</option>
+<option value="false">No</option>
+</select>
+</div>
+</div>
+</div>
+
+</script>
+
+
+<script id="question-template-date" type="template">
+<div class="card-panel hoverable">
+<div class="container">
+<p>{{ description }}</p>
+<div class="input-field">
+<input id={{ name }} type="text" class="datepicker">
+<label>Select a date</label>
+</div>
+</div>
+</div>
+</script>
+
+
+<script id="question-template-numeric" type="template">
+<div class="card-panel hoverable">
+<div class="container">
+<p>{{ description }}</p>
+<div class="input-field">
+<input id={{ name }} type="number" data-length="10">
+<label for={{ name }}>Input</label>
+</div>
+
+</div>
+</div>
+</script>
