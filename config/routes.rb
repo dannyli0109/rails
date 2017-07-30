@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get "/form", to: "pages#form"
 
+  get "/chat", to: "pages#chat"
+
   get "/result", to: "pages#result"
 
   get "/api/questions/finance", to: 'api/questions#finance_show'

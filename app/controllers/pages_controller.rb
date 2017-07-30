@@ -44,4 +44,9 @@ class PagesController < ApplicationController
     render json: json
   end
 
+  def chat
+
+    
+  end
+
 end
