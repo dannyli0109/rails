@@ -46,7 +46,12 @@ class PagesController < ApplicationController
 
   def chat
 
-    
+
+  end
+
+
+  def dashboard
+
   end
 
 end

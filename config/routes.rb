@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get "/result", to: "pages#result"
 
+  get "/dashboard", to: "pages#dashboard"
+
   get "/api/questions/finance", to: 'api/questions#finance_show'
 
   get "/api/questions/escalator", to: 'api/questions#escalator_show'

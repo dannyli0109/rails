@@ -1,70 +1,81 @@
 /*sticky footer*/
 
 body {
-   display: flex;
-   min-height: 100vh;
-   flex-direction: column;
- }
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
- main {
-   flex: 1 0 auto;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   height: 100%;
- }
+main {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 
- .flex {
-   height: 100%;
-   flex: 1 0 auto;
- }
+.flex {
+  height: 100%;
+  flex: 1 0 auto;
+}
 
- .iframe-size {
-   position: absolute;
-   top: 64px;
-   bottom: 72px;
-   left: 0;
-   right: 0;
- }
+.iframe-size {
+  position: absolute;
+  top: 64px;
+  bottom: 72px;
+  left: 0;
+  right: 0;
+}
 
- .iframe-size iframe {
-   display: block;
-   width: 100%;
-   height: 100%;
-   border: none;
- }
+.iframe-size iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  margin: 0 auto;
+}
+
+.chart-iframe-size {
+  text-align: center;
+}
+
+.chart-iframe-size iframe {
+  display: block;
+  width: 100%;
+  border: none;
+}
 
 
 
- html {
-   height: 100%
- }
+html {
+  height: 100%
+}
 
 
 /* label color */
-   .input-field label {
-     color: #000;
-   }
-   /* label focus color */
-   .input-field input[type=text]:focus + label {
-     color: #000;
-   }
-   /* label underline focus color */
-   .input-field input[type=text]:focus {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* valid color */
-   .input-field input[type=text].valid {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* invalid color */
-   .input-field input[type=text].invalid {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* icon prefix focus color */
-   .input-field .prefix.active {
-     color: #000;
-   }
+.input-field label {
+  color: #000;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #000;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #000;
+}
