@@ -19,6 +19,14 @@ main {
   flex: 1 0 auto;
 }
 
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
 .iframe-size {
   position: absolute;
   top: 64px;

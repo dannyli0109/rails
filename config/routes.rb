@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   get "/api/questions/escalator", to: 'api/questions#escalator_show'
 
+  get "/api/questions/farm", to: 'api/questions#farm_show'
+
   get "/api/goals/escalator", to: "api/goals#escalator_show"
 
 end

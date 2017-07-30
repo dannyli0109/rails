@@ -14,34 +14,31 @@ class PagesController < ApplicationController
 
 
   def result
+    json = params[:results]
 
-    request = Typhoeus::Request.new(
-    "/api/v0/domain/demonstration/reasoning/reason",
-    headers: { 'Content-Type' => "application/json", "Authorization" => "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMGQ3YmYwZS1mODhiLTQwZTktOTRjNS05MTU4OGIxNTJmMGYiLCJleHAiOjE1MDM3MDg5NDIsImlhdCI6MTUwMTI4OTc0Mn0.Z-uGwCZbNuFGWe-SLSru1C08fsFlEhUyMavHtqUlzQA" },
-    body: params[:results].to_json)
+    @body = []
 
-      json = {}
 
-      request.on_complete do |response|
 
-        if response.success?
-          json = JSON.parse(response.body)
-          # hell yeah
-        elsif response.timed_out?
-          # aw hell no
-          log("got a time out")
-        elsif response.code == 0
-          # Could not get an http response, something's wrong.
-          log(response.return_message)
-        else
-          # Received a non-successful http response.
-          log("HTTP request failed: " + response.code.to_s)
-        end
+
+    if json["farm.hgpTreated"] == "false" && json["farm.hgpOnProperty"] == "false" && json["farm.NLIS"] == "true"
+      @body.push("Great! It looks like you are ready to apply to become an accredited farm.")
+    else
+      if json["farm.hgpTreated"] == "true"
+        @body.push("You will need to remove all cattle treated with HGPs (Hormone Growth Promotants) from your property. A Statutory Declaration recording removal of treated cattle will be required with your application.")
       end
 
+      if json["farm.hgpOnProperty"] == "true"
+        @body.push("You will need to remove the HGPs (Hormone Growth Promotants) on your property. A Statutory Declaration recording the removal of unused HGP doses will be required with your application.")
+      end
 
+      if json["farm.NLIS"] == "false"
+        @body.push("All the cattle on your property must be identified with an NLIS (National Livestock Identification System) device.")
+      end
+    end
 
-    render json: json
+    @body.push("You can get the application form for accreditation from the Department of Agriculture, Forestry and Fishing from their website at http://www.agriculture.gov.au/biosecurity/eucas or by contacting the EUCAS helpline on 1800 305 544. You must submit the application form to the department with the appropriate attachments. Thank you.")
+
   end
 
   def chat

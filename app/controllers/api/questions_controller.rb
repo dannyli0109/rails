@@ -29,10 +29,7 @@ class Api::QuestionsController < ApplicationController
         end
       end
 
-
-
       request.run
-
 
       render json: json
     end
@@ -43,7 +40,7 @@ class Api::QuestionsController < ApplicationController
 
     def escalator_show
       request = Typhoeus::Request.new(
-      "https://raap.d61.io/api/v0/domain/export-control/schema",
+      "https://raap.d61.io/api/v0/domain/demonstration/schema",
       headers: { 'Content-Type' => "application/json", "Authorization" => "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMGQ3YmYwZS1mODhiLTQwZTktOTRjNS05MTU4OGIxNTJmMGYiLCJleHAiOjE1MDM3MDg5NDIsImlhdCI6MTUwMTI4OTc0Mn0.Z-uGwCZbNuFGWe-SLSru1C08fsFlEhUyMavHtqUlzQA" },
       body: {
 
@@ -107,6 +104,33 @@ class Api::QuestionsController < ApplicationController
 
         render json: json
       end
+
+
+      def farm_show
+        json = [
+          {
+            "sequence": 0,
+            "name": "farm.hgpTreated",
+            "atomType": "BOOL",
+            "description": "Do you have HGP (Hormone Growth Promotant) treated cattle on your property?"
+          },
+          {
+            "sequence": 0,
+            "name": "farm.hgpOnProperty",
+            "atomType": "BOOL",
+            "description": "Do you have any HGPs (Hormone Growth Promotants) on your property?"
+          },
+          {
+            "sequence": 0,
+            "name": "farm.NLIS",
+            "atomType": "BOOL",
+            "description": "Are all your cattle identifiable with an NLIS (National Livestock Identification System) device?"
+          }
+        ]
+        render json: json
+      end
+
+
 
 
 

@@ -1,5 +1,5 @@
 <div class="row flex" style="margin: 20px">
-  <div class="col l5 hide-on-med-and-down" style="text-align:center; position: fixed; top:300px">
+  <div class="col l5 hide-on-med-and-down" style="text-align:center; position: fixed;">
     <iframe width="400" height="400" frameBorder="0" src="https://chiumanhay.shinyapps.io/compliance_donut/"></iframe>
   </div>
   <div class="container">
@@ -17,7 +17,7 @@
 
 <script>
 $questionContainer = $(".questions-container")
-$.ajax({ url: "/api/questions/escalator"}).done(function(res) {
+$.ajax({ url: "/api/questions/farm"}).done(function(res) {
   $questionContainer.html("")
   res.forEach(function(element,index) {
     if(element["atomType"] == "BOOL") {
