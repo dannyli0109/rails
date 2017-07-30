@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Illuminati</title>
+  <link rel="icon" href="http://i.imgur.com/xtXyq1p.png">
+  <title>RegsCheck</title>
   <%= csrf_meta_tags %>
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -14,19 +15,22 @@
 
   <nav class="cyan lighten-1" style="padding:0 10px;">
     <div class="nav-wrapper">
-      <a href="/" class="brand-logo">Illuminati</a>
+      <a href="/"><img src="http://i.imgur.com/xtXyq1p.png" href="/" width=43 height=42 style="margin:10px 5px"></a>
+      <a href="/" class="brand-logo">RegsCheck</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/about">About us</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="/dashboard">Dashboard</a></li>
         <li><a href="/sourcecode">Source Code</a></li>
+        <li><a href="/about">About</a></li>
 
 
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="/about">About us</a></li>
-        <li><a href="dashboard">Dashboard</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
         <li><a href="/sourcecode">Source Code</a></li>
+        <li><a href="/about">About</a></li>
 
 
       </ul>
@@ -35,7 +39,7 @@
 
 
 
-    <%= yield %>
+  <%= yield %>
 
 
 
@@ -57,9 +61,9 @@
 
 
   <footer class="page-footer cyan lighten-1">
-      <div class="container">
-        <p>&copy; Copyright 2017 Illuminati</p>
-      </div>
+    <div class="container" style="text-align:center">
+      <p>&copy; Copyright 2017 Illuminati</p>
+    </div>
   </footer>
 
 </body>

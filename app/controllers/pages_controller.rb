@@ -20,7 +20,6 @@ class PagesController < ApplicationController
 
 
 
-
     if json["farm.hgpTreated"] == "false" && json["farm.hgpOnProperty"] == "false" && json["farm.NLIS"] == "true"
       @body.push("Great! It looks like you are ready to apply to become an accredited farm.")
     else
@@ -54,6 +53,14 @@ class PagesController < ApplicationController
 
 
   def sourcecode
+
+  end
+
+  def selections
+
+  end
+
+  def commingsoon
 
   end
 

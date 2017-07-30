@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
   get "/sourcecode", to: "pages#sourcecode"
 
+  get "/selections", to: "pages#selections"
+
+  get "/commingsoon", to: "pages#commingsoon"
+
   get "/api/questions/finance", to: 'api/questions#finance_show'
 
   get "/api/questions/escalator", to: 'api/questions#escalator_show'
