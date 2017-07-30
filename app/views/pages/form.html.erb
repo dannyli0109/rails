@@ -1,6 +1,6 @@
 <div class="row flex" style="margin: 20px">
   <div class="col l5 hide-on-med-and-down" style="text-align:center; position: fixed;">
-    <iframe width="400" height="400" frameBorder="0" src="https://chiumanhay.shinyapps.io/compliance_donut/"></iframe>
+    <iframe id="percent-graph" width="400" height="400" frameBorder="0" src="https://chiumanhay.shinyapps.io/donut10"></iframe>
   </div>
   <div class="container">
 
@@ -16,6 +16,18 @@
 
 
 <script>
+function roundTo(n, digits) {
+  if (digits === undefined) {
+    digits = 0;
+  }
+
+  var multiplicator = Math.pow(10, digits);
+  n = parseFloat((n * multiplicator).toFixed(11));
+  var test =(Math.round(n) / multiplicator);
+  return +(test.toFixed(digits));
+}
+
+
 $questionContainer = $(".questions-container")
 $.ajax({ url: "/api/questions/farm"}).done(function(res) {
   $questionContainer.html("")
@@ -28,6 +40,14 @@ $.ajax({ url: "/api/questions/farm"}).done(function(res) {
       $questionContainer.append($output)
       var $select = $("select[id='" + element.name + "']")
       $select.on("change", function(e) {
+        var count = 0
+        for (var i = 0; i < $("select").length; i++) {
+          if ($("select")[i].value != "null"){
+            count ++;
+          }
+        }
+        var percent = roundTo(count/$("select").length,1)
+        $("#percent-graph").attr("src", "https://chiumanhay.shinyapps.io/donut" + percent*100)
         $output.val(e.target.value)
       })
     } else if (element["atomType"] == "DATE") {

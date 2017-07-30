@@ -110,7 +110,7 @@ class Api::QuestionsController < ApplicationController
         json = [
           {
             "sequence": 0,
-            "name": "farm.hgpTreated",
+            "name": "fram.hgpTreated",
             "atomType": "BOOL",
             "description": "Do you have HGP (Hormone Growth Promotant) treated cattle on your property?"
           },

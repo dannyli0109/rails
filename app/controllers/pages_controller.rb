@@ -51,4 +51,10 @@ class PagesController < ApplicationController
 
   end
 
+
+
+  def sourcecode
+
+  end
+
 end
