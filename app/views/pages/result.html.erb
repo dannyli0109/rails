@@ -1,9 +1,13 @@
 <div class="flex flex-center">
-  <div class="card-panel hoverable container">
+  <div class="container card-panel">
     <div>
-      <% @body.each do |line|%>
-      <p style="font-size: 25px"><%= "#{line}" %></p>
-      <% end %>
+      <ul>
+        <% @body.each do |line|%>
+        <li><%= "#{line}" %></li>
+        <br>
+        <% end %>
+      </ul>
+
     </div>
   </div>
 </div>
